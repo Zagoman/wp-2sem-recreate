@@ -8,39 +8,46 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header></header>
-    <main>
-      <h1 class="page-title">BIKE STOCK</h1>
-      <div class="brands">
-        <p>BRANDS WE CARRY</p>
-        <a href="" class="brand">Linus</a>
-        <a href="" class="brand">Brompton</a>
-        <a href="" class="brand">Christiania</a>
-        <a href="" class="brand">State</a>
-      </div>
-      <section class="product-list">
-        <article class="card">
-          <img src="" alt="" />
-          <span class="card_brand">State</span>
-          <h3 class="card_title">Warhawk</h3>
-          <section class="card_content">
-            <p class="card_tag">
-              Price
-              <span class="card_price">$579</span>
-            </p>
-            <p class="card_tag">
-              Colours
-              <span class="card_colours">N/A</span>
-            </p>
-            <p class="card_tag">
-              In Stock
-              <span class="card_stock">1</span>
-            </p>
-            <button class="card_btn">Full Specs</button>
-          </section>
-        </article>
-      </section>
-    </main>
-    <!-- <script type="module" src="main.js"></script> -->
+    <div id="wrapper">
+      <header></header>
+      <main>
+        <h1 class="page-title">BIKE STOCK</h1>
+        <div class="brands">
+          <p class="brands_title">BRANDS WE CARRY</p>
+          <div class="brands_container">
+            <a href="" class="brand">Linus</a>
+            <span class="divider">/</span>
+            <a href="" class="brand">Brompton</a>
+            <span class="divider">/</span>
+            <a href="" class="brand">Christiania</a>
+            <span class="divider">/</span>
+            <a href="" class="brand">State</a>
+          </div>
+        </div>
+        <section class="product-list">
+          <article class="card">
+            <img src="./media/warhawk.png" alt="warhawk bike" />
+            <span class="card_brand">State</span>
+            <h3 class="card_title">Warhawk</h3>
+            <section class="card_content">
+              <p class="card_tag">
+                Price
+                <span class="card_price">$579</span>
+              </p>
+              <p class="card_tag">
+                Colours
+                <span class="card_colours">N/A</span>
+              </p>
+              <p class="card_tag">
+                In Stock
+                <span class="card_stock">1</span>
+              </p>
+              <button class="card_btn">Full Specs</button>
+            </section>
+          </article>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="main.js"></script>
   </body>
 </html>

@@ -30,7 +30,12 @@ h5,
 h6 {
   font-family: var(--ff-primary);
 }
-
+img {
+  max-width: 100%;
+}
+#wrapper {
+  padding-inline: 1rem;
+}
 /*********** Brands *************/
 .page-title {
   background-color: var(--color-black);
@@ -64,5 +69,66 @@ h6 {
   inset: 50% 1rem auto auto;
   transform: translateY(-50%);
 }
+.divider {
+  display: none;
+}
+.brands_title:after {
+  content: "+";
+  display: inline-block;
+  transition: transform 0.2s;
+  margin-left: 0.5rem;
+}
+.brands_title.open:after {
+  transform: rotateZ(45deg);
+}
+.brands_container {
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.2;
+}
+.brands_container.open {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: auto;
+  padding: 0.5rem 1rem 2rem;
+}
+@media only screen and (min-width: 1000px) {
+  .brands {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .divider {
+    display: inline-block;
+  }
+  .brands_container {
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 0;
+  }
+  .brands_title:after {
+    display: none;
+  }
+}
 
 /*********** Brands End *************/
+/*********** Product List *************/
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+.card {
+  background-color: var(--color-white);
+}
+.card > img {
+  width: 100%;
+  aspect-ratio: 1256/812;
+  object-fit: cover;
+  object-position: center;
+}
+/*********** Product List *************/
