@@ -37,6 +37,7 @@ img {
   padding-inline: 1rem;
 }
 /*********** Brands *************/
+
 .page-title {
   background-color: var(--color-black);
   color: var(--color-white);
@@ -69,8 +70,27 @@ img {
   inset: 50% 1rem auto auto;
   transform: translateY(-50%);
 }
+.brands {
+  font-family: var(--ff-primary);
+}
+.brand {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-accent);
+  transition: color 0.3s ease;
+  letter-spacing: 2px;
+}
+.brand:hover {
+  color: var(--color-grey);
+}
 .divider {
   display: none;
+  color: var(--color-accent);
+}
+.brands_title {
+  color: var(--color-grey);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 .brands_title:after {
   content: "+";
