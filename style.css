@@ -31,3 +31,38 @@ h6 {
   font-family: var(--ff-primary);
 }
 
+/*********** Brands *************/
+.page-title {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 0.2rem 2rem;
+  display: inline-block;
+  font-size: 1rem;
+  font-family: var(--ff-secondary);
+  position: relative;
+  letter-spacing: 2px;
+}
+.page-title::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: white;
+  inset: 50% auto auto 1rem;
+  transform: translateY(-50%);
+}
+.page-title::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: white;
+  inset: 50% 1rem auto auto;
+  transform: translateY(-50%);
+}
+
+/*********** Brands End *************/
