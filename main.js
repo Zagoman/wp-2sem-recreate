@@ -17,39 +17,9 @@ class Main {
     });
 
     this._data.forEach((entry) => this._DisplayEntry(entry));
-
-    console.log(this._data);
   }
-
-  /*
- <template>
-      <article class="card">
-        <img src="./media/warhawk.png" alt="warhawk bike" />
-        <div class="card_wrapper">
-          <span class="card_brand">State</span>
-          <h3 class="card_title">Warhawk</h3>
-          <section class="card_content">
-            <p class="card_tag">
-              Price -
-              <span class="card_price">$579</span>
-            </p>
-            <p class="card_tag">
-              Colours -
-              <span class="card_colours">N/A</span>
-            </p>
-            <p class="card_tag">
-              In Stock -
-              <span class="card_stock">1</span>
-            </p>
-            <button class="card_btn">Full Specs</button>
-          </section>
-        </div>
-      </article>
-    </template>
-  */
   _DisplayEntry(entry) {
     const colours = entry.bike_colours.split(",");
-    console.log(colours);
     const clone = this._template.cloneNode(true);
     const colourHolder = clone.querySelector(".card_colours");
     clone.querySelector(".card_brand").textContent =
