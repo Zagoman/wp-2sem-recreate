@@ -24,30 +24,33 @@
             <a href="" class="brand">State</a>
           </div>
         </div>
-        <section class="product-list">
-          <article class="card">
-            <img src="./media/warhawk.png" alt="warhawk bike" />
-            <span class="card_brand">State</span>
-            <h3 class="card_title">Warhawk</h3>
-            <section class="card_content">
-              <p class="card_tag">
-                Price
-                <span class="card_price">$579</span>
-              </p>
-              <p class="card_tag">
-                Colours
-                <span class="card_colours">N/A</span>
-              </p>
-              <p class="card_tag">
-                In Stock
-                <span class="card_stock">1</span>
-              </p>
-              <button class="card_btn">Full Specs</button>
-            </section>
-          </article>
-        </section>
+        <section class="product-list"></section>
       </main>
     </div>
+    <template>
+      <article class="card">
+        <img src="./media/warhawk.png" alt="warhawk bike" />
+        <div class="card_wrapper">
+          <span class="card_brand">State</span>
+          <h3 class="card_title">Warhawk</h3>
+          <section class="card_content">
+            <p class="card_tag">
+              Price -
+              <span class="card_price">$579</span>
+            </p>
+            <p class="card_tag">
+              Colours -
+              <span class="card_colours"></span>
+            </p>
+            <p class="card_tag">
+              In Stock -
+              <span class="card_stock">1</span>
+            </p>
+            <button class="card_btn">Full Specs</button>
+          </section>
+        </div>
+      </article>
+    </template>
     <script type="module" src="main.js"></script>
   </body>
 </html>

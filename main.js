@@ -1,5 +1,8 @@
 class Main {
-  constructor() {
+  constructor(data) {
+    this._data = data;
+    this._template = document.querySelector("template").content;
+    this._gallery = document.querySelector(".product-list");
     this._Init();
   }
 
@@ -7,17 +10,73 @@ class Main {
     const brandsTitle = document.querySelector(".brands_title");
     const brandsContainer = document.querySelector(".brands_container");
     brandsTitle.addEventListener("click", () => {
-      console.log(window.innerWidth);
       if (window.innerWidth < 1000) {
         brandsTitle.classList.toggle("open");
         brandsContainer.classList.toggle("open");
       }
     });
+
+    this._data.forEach((entry) => this._DisplayEntry(entry));
+
+    console.log(this._data);
+  }
+
+  /*
+ <template>
+      <article class="card">
+        <img src="./media/warhawk.png" alt="warhawk bike" />
+        <div class="card_wrapper">
+          <span class="card_brand">State</span>
+          <h3 class="card_title">Warhawk</h3>
+          <section class="card_content">
+            <p class="card_tag">
+              Price -
+              <span class="card_price">$579</span>
+            </p>
+            <p class="card_tag">
+              Colours -
+              <span class="card_colours">N/A</span>
+            </p>
+            <p class="card_tag">
+              In Stock -
+              <span class="card_stock">1</span>
+            </p>
+            <button class="card_btn">Full Specs</button>
+          </section>
+        </div>
+      </article>
+    </template>
+  */
+  _DisplayEntry(entry) {
+    const colours = entry.bike_colours.split(",");
+    console.log(colours);
+    const clone = this._template.cloneNode(true);
+    const colourHolder = clone.querySelector(".card_colours");
+    clone.querySelector(".card_brand").textContent =
+      entry._embedded["wp:term"][0][1]["name"];
+    clone.querySelector(".card_title").textContent = entry.title.rendered;
+    clone.querySelector(".card_price").textContent = `$${entry.bike_price}`;
+    colours.forEach((colour) => {
+      colourHolder.innerHTML += this._DisplayColors(colour);
+    });
+    clone.querySelector(".card_stock").textContent = entry.in_stock;
+
+    this._gallery.append(clone);
+  }
+
+  _DisplayColors(colour) {
+    return `<div style="background-color: ${colour}" class="card_colour-box"></div>`;
   }
 }
 
 let _APP = null;
 
-window.addEventListener("DOMContentLoaded", () => {
-  _APP = new Main();
-});
+window.addEventListener("DOMContentLoaded", loadData);
+async function loadData() {
+  const response = await fetch(
+    "https://lucaszago.dk/wp-childtheme/wp-json/wp/v2/bike?_embed"
+  );
+  const data = await response.json();
+
+  _APP = new Main(data);
+}
