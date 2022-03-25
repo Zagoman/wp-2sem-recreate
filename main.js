@@ -56,9 +56,13 @@ class Main {
       entry._embedded["wp:term"][0][1]["name"];
     clone.querySelector(".card_title").textContent = entry.title.rendered;
     clone.querySelector(".card_price").textContent = `$${entry.bike_price}`;
-    colours.forEach((colour) => {
-      colourHolder.innerHTML += this._DisplayColors(colour);
-    });
+    if (colours.length > 1) {
+      colours.forEach((colour) => {
+        colourHolder.innerHTML += this._DisplayColors(colour);
+      });
+    } else {
+      colourHolder.textContent = "N/A";
+    }
     clone.querySelector(".card_stock").textContent = entry.in_stock;
     clone.querySelector("img").src =
       entry._embedded[
