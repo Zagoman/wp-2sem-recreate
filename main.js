@@ -60,6 +60,12 @@ class Main {
       colourHolder.innerHTML += this._DisplayColors(colour);
     });
     clone.querySelector(".card_stock").textContent = entry.in_stock;
+    clone.querySelector("img").src =
+      entry._embedded[
+        "wp:featuredmedia"
+      ][0].media_details.sizes.medium_large.source_url;
+    clone.querySelector("img").alt =
+      entry._embedded["wp:featuredmedia"][0].alt_text;
 
     this._gallery.append(clone);
   }
