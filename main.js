@@ -26,7 +26,7 @@ class Main {
       entry._embedded["wp:term"][0][1]["name"];
     clone.querySelector(".card_title").textContent = entry.title.rendered;
     clone.querySelector(".card_price").textContent = `$${entry.bike_price}`;
-    if (colours.length > 1) {
+    if (colours[0]) {
       colours.forEach((colour) => {
         colourHolder.innerHTML += this._DisplayColors(colour);
       });
