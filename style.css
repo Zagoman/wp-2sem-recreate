@@ -215,6 +215,7 @@ img {
 .card_colour-box {
   width: 16px;
   aspect-ratio: 1;
+  margin-right: 0.2rem;
   /* border: 1px solid rgb(241, 241, 241); */
 }
 /*********** Product List *************/
